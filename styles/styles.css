@@ -453,9 +453,7 @@ p {
 
   font-size: 12px;
   line-height: 1.17;
-
   letter-spacing: 0.01em;
-
   color: var(--text-color-secondary);
 }
 
@@ -492,7 +490,8 @@ p {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-input:focus + .icon-input {
+
+.for-input-icon:focus-within .icon-input {
   fill: var(--text-colot-accent);
 }
 
