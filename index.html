@@ -810,24 +810,49 @@
           placeholder="Введите текст"
           class="modal-comment"
         ></textarea>
+        <!-- <div class="modal-privacy">
+          <input
+            type="checkbox"
+            name="PrivacyPolicy"
+            id="PrivacyPolicy"
+            class="modal-privacy-input hidden"
+          />
+          <label
+            for="PrivacyPolicy"
+            class="modal-privacy-text"
+            ><span
+              ><svg
+                class="icon-checkbox"
+                width="11"
+                height="8"
+              >
+                <use
+                  href="./images/icon/icons.svg#icon-check"
+                ></use></svg></span
+            >Соглашаюсь с рассылкой и принимаю
+            <a href="" class="privacy-link link"
+              >Условия договора</a
+            ></label
+          >
+        </div> -->
+
         <div class="modal-privacy">
           <input
             type="checkbox"
             name="PrivacyPolicy"
             id="PrivacyPolicy"
-            class="modal-privacy-input "
+            class="modal-privacy-input hidden"
           />
-          <svg class="icon-checkbox" width="16" height="15">
-            <use
-              href="./images/icon/icons.svg#icon-checked"
-            ></use>
-          </svg>
           <label
             for="PrivacyPolicy"
             class="modal-privacy-text"
-            >Соглашаюсь с рассылкой и принимаю <a href="" class="privacy-link link">Условия договора</a></label
+            >Соглашаюсь с рассылкой и принимаю&#8194;
+            <a href="" class="privacy-link link"
+              >Условия договора</a
+            ></label
           >
         </div>
+
         <button type="submit" class="submit-modal-btn">
           Отправить
         </button>

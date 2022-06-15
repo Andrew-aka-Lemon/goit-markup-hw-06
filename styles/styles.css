@@ -50,6 +50,11 @@ p {
   padding: 0;
 }
 
+input,
+textarea {
+  outline: none;
+}
+
 /* універсальний контейнер для всіх блоків */
 .container {
   width: 1200px;
@@ -425,7 +430,6 @@ p {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
 .icon-close-cross {
   fill: currentColor;
 }
@@ -471,7 +475,8 @@ p {
   padding: 12px 42px;
 }
 
-.modal-input:focus {
+.modal-input:focus,
+.modal-comment:focus {
   border-color: var(--text-colot-accent);
 }
 
@@ -490,7 +495,6 @@ p {
   color: rgba(117, 117, 117, 0.5);
 }
 
-
 .for-input-icon:focus-within .icon-input {
   fill: var(--text-colot-accent);
 }
@@ -507,17 +511,12 @@ p {
   transform: translateY(-50%);
 }
 
-/* тут самодіяльність по чекбоксу */
-.icon-checkbox {
-  margin-left: 12px;
-  fill: transparent;
-  border: 2px solid var(--text-color-main);
-  border-radius: 4px;
-}
-
 .modal-privacy {
   display: flex;
+  justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
 }
 
@@ -525,13 +524,59 @@ p {
   position: absolute;
 }
 
+/* -------через спрайтову СВГ виходить, але span в modal-privacy займає цілий рядок чомусь, не розібрався чому-- */
+
+/*
+.modal-privacy span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+
+  width: 16px;
+  height: 15px;
+
+  border: 2px solid var(--text-color-main);
+  border-radius: 4px;
+
+  color: transparent;
+}
+
+.icon-checkbox {
+  fill: currentColor;
+}
+
+.modal-privacy-input:checked + .modal-privacy-text > span {
+  color: var(--text-color-alt);
+  background-color: var(--text-colot-accent);
+  border: none;
+}*/
+
+/* ------------------------------------/////-/-/-/-/-/ */
+
 .modal-privacy-text {
-  margin-left: 8px;
+  display: flex;
+  align-items: center;
 
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--text-color-secondary);
+}
+
+.modal-privacy-text::before {
+  content: "";
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--text-color-main);
+  border-radius: 3px;
+}
+
+.modal-privacy-input:checked + .modal-privacy-text::before {
+  border: none;
+  background-color: var(--btn-color-social-focus);
+  background-image: url(../images/icon/icon-check.svg);
 }
 
 .privacy-link {
@@ -542,6 +587,7 @@ p {
 
   color: var(--text-colot-accent);
 }
+
 .submit-modal-btn {
   background-color: var(--text-colot-accent);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -559,10 +605,9 @@ p {
 
   letter-spacing: 0.06em;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+  transition: background-color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
 
 .submit-modal-btn:hover {
   background-color: var(--btn-color-focus);
