@@ -52,7 +52,8 @@ p {
 }
 
 input,
-textarea {
+textarea,
+button {
   outline: none;
 }
 
@@ -261,7 +262,7 @@ textarea {
 /* Подпишитесь на рассылку */
 
 .sign-up-mail {
-  margin-left: 93px;
+  margin-left: auto;
 }
 
 .sign-up-text {
@@ -320,8 +321,7 @@ textarea {
 
   cursor: pointer;
 
-  transition: background-color 250ms
-    var(--cubic-function);
+  transition: background-color 250ms var(--cubic-function);
 }
 
 .submit-btn:hover,
@@ -435,7 +435,8 @@ textarea {
   fill: currentColor;
 }
 
-.close-modal-btn:hover {
+.close-modal-btn:hover,
+.close-modal-btn:focus {
   transform: translate(-2%, -2%);
   cursor: pointer;
   color: var(--btn-color-social-focus);
@@ -498,7 +499,7 @@ textarea {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.for-input-icon:focus .icon-input {
+.modal-input:focus + .icon-input {
   fill: var(--text-colot-accent);
 }
 
@@ -576,12 +577,19 @@ textarea {
   height: 15px;
   border: 2px solid var(--text-color-main);
   border-radius: 3px;
+
+  transition: border-color 250ms var(--cubic-function);
 }
 
 .modal-privacy-input:checked + .modal-privacy-text::before {
   border: none;
   background-color: var(--btn-color-social-focus);
   background-image: url(../images/icon/icon-check.svg);
+}
+
+.modal-privacy-input:focus + .modal-privacy-text::before,
+.modal-privacy-input:hover + .modal-privacy-text::before {
+  border-color: var(--btn-color-focus);
 }
 
 .privacy-link {
@@ -592,10 +600,12 @@ textarea {
 
   color: var(--text-colot-accent);
 
-  transition: color 250ms var(--cubic-function), transform 250ms var(--cubic-function);
+  transition: color 250ms var(--cubic-function),
+    transform 250ms var(--cubic-function);
 }
 
-.privacy-link:hover, .privacy-link:focus{
+.privacy-link:hover,
+.privacy-link:focus {
   color: var(--btn-color-focus);
   transform: translateY(-2px);
 }
@@ -617,11 +627,11 @@ textarea {
 
   letter-spacing: 0.06em;
 
-  transition: background-color 250ms
-    var(--cubic-function);
+  transition: background-color 250ms var(--cubic-function);
 }
 
-.submit-modal-btn:hover {
+.submit-modal-btn:hover,
+.submit-modal-btn:focus {
   background-color: var(--btn-color-focus);
   cursor: pointer;
 }
