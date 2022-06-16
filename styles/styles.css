@@ -51,11 +51,17 @@ p {
   padding: 0;
 }
 
-input,
+/* ---Бесит черній аутлайн при фокусе, глобально убираем--- */
+
+* {
+  outline: none;
+}
+
+/* input,
 textarea,
 button {
   outline: none;
-}
+} */
 
 /* універсальний контейнер для всіх блоків */
 .container {
